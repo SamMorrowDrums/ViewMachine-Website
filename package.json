@@ -2,7 +2,7 @@
   "name": "ViewMachine-Website",
   "version": "0.0.0",
   "description": "Website for the jQuery plugin ViewMachine",
-  "main": "app.js",
+  "main": "app/app.js",
   "scripts": {
     "test": "console.log('test')"
   },
