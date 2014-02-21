@@ -1,0 +1,27 @@
+{
+  "name": "ViewMachine-Website",
+  "version": "0.0.0",
+  "description": "Website for the jQuery plugin ViewMachine",
+  "main": "app.js",
+  "scripts": {
+    "test": "console.log('test')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SamMorrowDrums/ViewMachine-Website.git"
+  },
+  "keywords": [
+    "ViewMachine",
+    "VM",
+    "jQuery",
+    "Template"
+  ],
+  "author": "Sam Morrow",
+  "license": "The MIT License (MIT)",
+  "bugs": {
+    "url": "https://github.com/SamMorrowDrums/ViewMachine-Website/issues"
+  },
+  "dependencies": {
+    "express": "~3.4.8"
+  }
+}
