@@ -6,6 +6,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-size: 1.5em;
+
 }
 a {
 	font-weight: 400;
@@ -19,6 +20,9 @@ a:hover {
 .center {
 	display: table;
 	margin: auto;
+}
+.hidden {
+	opacity: 0.0;
 }
 
 .body {
@@ -36,7 +40,7 @@ header {
 }
 
 .content {
-	margin-top: 10%;
+	margin-top: 5%;
 	min-width: 600px;
 	width: 80%;
 }
