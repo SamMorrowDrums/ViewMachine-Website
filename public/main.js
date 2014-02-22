@@ -6,7 +6,7 @@
 	});
 
 	var header = new VM.El('header');
-	var logo = new VM.Image('images/viewmachine-logo.png', '', {'class': 'logo'});
+	var logo = new VM.Image('images/viewmachine-logo.png', '', {'class': 'logo', title: 'ViewMachine Logo'});
 	var txtLogo = new VM.Image('images/viewmachine-txt.png', '', {'class': 'logotxt'});
 	$.extend(logo, VM.matrixMethods);
 	logo.matrixData = [0,0,0,0,0,0,1, true];
