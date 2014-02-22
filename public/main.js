@@ -1,3 +1,13 @@
+var ls = (function (){
+    var test = 'test';
+    try {
+        localStorage.setItem(test, test);
+        localStorage.removeItem(test);
+        return true;
+    } catch(e) {
+        return false;
+    }
+}());
 (function ($, VM) {
 	var body = new VM.El('div', {'class': 'body'});
 	var header = new VM.El('header');
@@ -28,3 +38,4 @@
 		}, 5000);
 	});
 }(jQuery, VM));
+
