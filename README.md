@@ -1,4 +1,4 @@
 ViewMachine-Website
 ===================
 
-Website for the ViewMachine jQuery Plugin
+Website for the ViewMachine Template Plugin
