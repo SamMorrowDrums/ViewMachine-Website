@@ -31,9 +31,9 @@ function getView(view, callback) {
 		header = VM.jsonTemplate(data);
 		logo = header.children[0];
 		txtLogo = header.children[1];
-		$.extend(logo, VM.matrixMethods);
+		VM.extend(logo, VM.matrixMethods);
 		logo.matrixData = [0,0,0,0,0,0,1, true];
-		logo.event('click', function (e) {e.data.animate(1, 1, 0, 360, 0, 0, 0, 0); });
+		logo.event('click', function (e) {logo.animate(1, 1, 0, 360, 0, 0, 0, 0); });
 		body.prepend(header);
 		setTimeout(function (){logo.animate(1.5,1,0,360,0,0,0,0);}, 300);
 	});
@@ -55,11 +55,11 @@ function getView(view, callback) {
 	content.append(new VM.El('p', {'class': 'center hidden', text: 'ViewMachine empowers your JS, so HTML is a consequence, not a hindrance.'}));
 	$(document).ready(function (){
 		body.draw();
-		setTimeout(function (){ content.children[0].$().animate({'opacity': '+=1'}, 2000); }, 1500);
-		setTimeout(function (){ content.children[1].$().animate({'opacity': '+=1'}, 2000); }, 3000);
+		setTimeout(function (){ $('#' + content.children[0].properties.id).animate({'opacity': '+=1'}, 2000); }, 1500);
+		setTimeout(function (){ $('#' + content.children[1].properties.id).animate({'opacity': '+=1'}, 2000); }, 3000);
 		setTimeout(function (){
 			$('h3').animate({'opacity': '-=1', 'margin-bottom': '-=30px'}, 800);
-			content.children[2].$().animate({'opacity': '+=1'}, 2000);
+			$('#' + content.children[2].properties.id).animate({'opacity': '+=1'}, 2000);
 			setTimeout(function (){
 				content.append(new VM.El('p', {'class': 'center', text: 'Visit us on '}).append(new VM.El('a', {text: 'Github.', href: 'https://github.com/SamMorrowDrums/ViewMachine/wiki'}) ).css('margin-top', '50px'));
 			}, 3000);
