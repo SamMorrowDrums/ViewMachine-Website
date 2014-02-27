@@ -54,7 +54,7 @@ app.get('/views/:view', function (req, res) {
 var feeds = require('./lib/VM-Feeds/VM-Feeds-Server');
 
 //Create a feed with name and details (age in ms and length as integer)
-feeds.createFeed('customFeed', {maxAge: 600000, maxLength: 10});
+feeds.createFeed('customFeed', {maxAge: 86400000, maxLength: 10});
 
 //Next add in template items, as they are created, using ViewMachine Server (yet to be released)
 for (var i = 0; i < 100; i++) {
