@@ -4,3 +4,6 @@
 [submodule "lib/VM3D"]
 	path = lib/VM3D
 	url = git://github.com/SamMorrowDrums/VM-Matrix3D.git
+[submodule "lib/VM-Feeds"]
+	path = lib/VM-Feeds
+	url = https://github.com/SamMorrowDrums/VM-Feeds.git
