@@ -68,7 +68,7 @@ var x = 10000;
 //Next add in template items, as they are created, using ViewMachine Server (yet to be released)
 for (var i = 0; i < 100; i++) {
   setTimeout(function () {
-    feeds.addItem('customFeed', '{"element":"header","children":[{"element":"img","properties":{"src":"","data-img":"http://viewmachine.io/images/viewmachine-logo.png","class":"logo","title":"ViewMachine Logo"}, "src":"http://viewmachine.io/images/viewmachine-logo.png","preload":"","events":[]},{"element":"img","properties":{"src":"","data-img":"http://viewmachine.io/images/viewmachine-txt.png","class":"logotxt"}, "src":"http://viewmachine.io/images/viewmachine-txt.png","preload":""}]} ');
+    feeds.addItem('customFeed', '{"element":"header","children":[{"element":"img","properties":{"src":"","data-img":"http://viewmachine.io/images/viewmachine-logo.png","class":"logo","title":"ViewMachine Logo"}, "src":"http://viewmachine.io/images/viewmachine-logo.png","preload":"","events":[["click", "VMio-Spin"]]},{"element":"img","properties":{"src":"","data-img":"http://viewmachine.io/images/viewmachine-txt.png","class":"logotxt"}, "src":"http://viewmachine.io/images/viewmachine-txt.png","preload":""}]} ');
   }, x*i);
 }
 //Finally, serve your feed
