@@ -54,16 +54,27 @@ app.get('/views/:view', function (req, res) {
 var feeds = require('./lib/VM-Feeds/VM-Feeds-Server');
 
 //Create a feed with name and details (age in ms and length as integer)
-feeds.createFeed('customFeed', {maxAge: 86400000, maxLength: 10});
-
+feeds.createFeed('customFeed', {
+  maxAge: 86400000,
+  maxLength: 10,
+  meta: {
+    origin: 'ViewMachine.io',
+    author: 'Sam Morrow',
+    info: 'This feed is a test for ViewMachine Feeds project. Mentioned JS dependencies are optional, but ViewMacine is needed to interpret the feed'
+  },
+  js: ['http://viewmachine.io/matrix3d.js', 'http://viewmachine.io/feed.js']
+});
+var x = 10000;
 //Next add in template items, as they are created, using ViewMachine Server (yet to be released)
 for (var i = 0; i < 100; i++) {
-feeds.addItem('customFeed', '{"element":"header","children":[{"element":"img","properties":{"src":"","data-img":"http://viewmachine.io/images/viewmachine-logo.png","class":"logo","title":"ViewMachine Logo"}, "src":"http://viewmachine.io/images/viewmachine-logo.png","preload":"","events":[]},{"element":"img","properties":{"src":"","data-img":"http://viewmachine.io/images/viewmachine-txt.png","class":"logotxt"}, "src":"http://viewmachine.io/images/viewmachine-txt.png","preload":""}]} ');
+  setTimeout(function () {
+    feeds.addItem('customFeed', '{"element":"header","children":[{"element":"img","properties":{"src":"","data-img":"http://viewmachine.io/images/viewmachine-logo.png","class":"logo","title":"ViewMachine Logo"}, "src":"http://viewmachine.io/images/viewmachine-logo.png","preload":"","events":[]},{"element":"img","properties":{"src":"","data-img":"http://viewmachine.io/images/viewmachine-txt.png","class":"logotxt"}, "src":"http://viewmachine.io/images/viewmachine-txt.png","preload":""}]} ');
+  }, x*i);
 }
 //Finally, serve your feed
-app.get('/feeds/:feed', function (req, res) {
+app.get('/feeds/:feed/:num?', function (req, res) {
   res.header('Access-Control-Allow-Origin', '*');
-  res.json(feeds.fetch(req.params.feed));
+  res.json(feeds.fetch(req.params.feed, req.params.num));
 });
 
 

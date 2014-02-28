@@ -35,7 +35,7 @@ This also drives the content feeds for ViewMachine CMS
       for (var feed in settings.feeds) {
         sendRequest(settings.feeds[feed], function(data) {
           var cont;
-          settings.parent.splice(0, settings.parent.length);
+          settings.parent.splice(0, settings.parent.children.length);
           for (var i = 0; i < data.content.length; i++) {
             cont = settings.constructor();
             cont.append(new VM.El('h3').text(new Date(data.content[i].date)));
@@ -49,7 +49,7 @@ This also drives the content feeds for ViewMachine CMS
   var total;
   var settings =
   {
-    feeds: ['http://viewMachine.io/feeds/customFeed'],                                                                // URLs of ViewMachine feeds to aggregate content from
+    feeds: ['http://viewMachine.io/feeds/customFeed/5'],                                                                // URLs of ViewMachine feeds to aggregate content from
     interval: 30000,                                                                                     // Interval to refresh the feeds at
     parent: new VM.El('div').css({'width': '80%', 'padding': '20px', 'margin': 'auto', 'background-color': '#ccc'}),       // VM parent, to put in the content
     constructor: block                                                                                   // VM Wrapper for each piece of content
