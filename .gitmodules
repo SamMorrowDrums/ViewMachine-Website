@@ -7,3 +7,6 @@
 [submodule "lib/VM-Feeds"]
 	path = lib/VM-Feeds
 	url = git://github.com/SamMorrowDrums/VM-Feeds.git
+[submodule "lib/vm-server"]
+	path = lib/vm-server
+	url = git@github.com:SamMorrowDrums/ViewMachine-Server.git
