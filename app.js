@@ -52,6 +52,8 @@ app.get('/views/:view', function (req, res) {
 });
 
 var feeds = require('./lib/VM-Feeds/VM-Feeds-Server');
+var VM = require('./lib/vm-server/dist/viewmachine-server.js');
+
 
 //Create a feed with name and details (age in ms and length as integer)
 feeds.createFeed('customFeed', {
@@ -75,6 +77,15 @@ for (var i = 0; i < 100; i++) {
 app.get('/feeds/:feed/:num?', function (req, res) {
   res.header('Access-Control-Allow-Origin', '*');
   res.json(feeds.fetch(req.params.feed, req.params.num));
+});
+
+app.get('/add/:img*', function (req, res) {
+  var newItem = new VM.El('div');
+  newItem.append(new VM.El('h2').text(req.params.img));
+  newItem.append(new VM.Image(req.params.img, '').event('click', 'VMio-Spin'));
+  var item = VM.jsonTemplate(newItem);
+  feeds.addItem('customFeed', item);
+  res.send(item);
 });
 
 
