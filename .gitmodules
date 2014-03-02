@@ -9,4 +9,4 @@
 	url = git://github.com/SamMorrowDrums/VM-Feeds.git
 [submodule "lib/vm-server"]
 	path = lib/vm-server
-	url = git@github.com:SamMorrowDrums/ViewMachine-Server.git
+	url = git://github.com:SamMorrowDrums/ViewMachine-Server.git
